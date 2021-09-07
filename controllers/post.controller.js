@@ -10,7 +10,7 @@ function save (req,res){
         categoryId: req.body.category_id,
         userId: 1
     }
-  
+
 models.Post.create(post).then(result => {
     res.status(201).json({
         message: "Post created successfully",
