@@ -5,7 +5,7 @@ const { condition } = require('sequelize');
 
 
 function signUp(req, res) {
-	// check if the nic address is already exist
+	// check if the nic address is already existt
 	models.Customer.findOne({ where: { nic: req.body.nic } })
 		.then(result => {
 			// if nic already exists
