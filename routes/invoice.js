@@ -1,9 +1,9 @@
 const express = require('express') 
-const orderController = require('../controllers/order.controller'); 
+const invoiceController = require('../controllers/invoice.controller'); 
 const checkAuthMiddleware = require('../middleware/check-auth');
  
 const router = express.Router(); 
  
-router.get("/", orderController.index); 
+router.get("/", invoiceController.invoice); 
 
 module.exports = router;

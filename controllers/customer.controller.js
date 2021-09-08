@@ -103,7 +103,7 @@ function login(req,res){
 function show(req,res){
 	const nic =req.params.nic;
 	
-	models.Customer.findByPk (nic).then(result =>{
+	models.Customer.findOne({where: {nic:nic}}).then(result =>{
 		res.status(200).json(result);
 	}).catch(error =>{
 		res.status(500).json({
@@ -161,11 +161,25 @@ function show(req,res){
 	
 	}
 
+	function index(req,res){
+		const id =req.params.id;
+		
+		models.Customer.findAll (id).then(result =>{
+			res.status(200).json(result);
+		}).catch(error =>{
+			res.status(500).json({
+				message:"Something went wrong"
+			})
+		});
+	}
+		
+
 
 module.exports ={
     signUp:signUp,
     login:login,
 	show:show,
 	update:update,
-	destroy:destroy
+	destroy:destroy,
+	index:index
 }
