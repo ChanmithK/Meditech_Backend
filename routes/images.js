@@ -6,7 +6,7 @@ const imageUploader = require('../helpers/image-uploader');
 
 const router = express.Router();
 
-router.post('/upload',imageUploader.upload.single('image'), imageController.upload);
+router.post('/upload',imageUploader.upload.single('file'), imageController.upload);
 
 
 module.exports = router; 
