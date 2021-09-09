@@ -126,8 +126,7 @@ function show(req,res){
 			street: req.body.street,
 			city: req.body.city,
 			province: req.body.province,
-			pCode: req.body.pCode,
-			password: hash,
+			pCode: req.body.pCode,	
 		} 
 	
 		models.Customer.update(updatedPost, {where: {nic:nic}}).then(result =>

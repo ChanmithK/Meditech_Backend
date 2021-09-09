@@ -9,6 +9,6 @@ router.post("/sign-up", userController.signUp);
 router.post("/login", userController.login);
 router.get("/:nic", userController.show);
 router.get("/", userController.index); 
-router.patch("/:nic", checkAuthMiddleware.checkAuth,userController.update); 
+router.post("/:nic", userController.update); 
 router.delete("/:nic", checkAuthMiddleware.checkAuth, userController.destroy);
 module.exports = router;
